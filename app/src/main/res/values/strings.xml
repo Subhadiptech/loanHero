@@ -12,6 +12,7 @@
     <string name="pan_sheet_title">You are one click far from getting your loan</string>
     <string name="pan_sheet_input_label">Enter Your PAN</string>
     <string name="pan_sheet_verify">Verify KYC and check status now</string>
+    <string name="pan_sheet_label">PAN Number:</string>
 
     <!--    transfer sheet strings-->
     <string name="transfer_sheet_title">Select how you with to repay</string>
@@ -23,12 +24,16 @@
     <string name="plan_3">₹ 3500/month</string>
     <string name="month_3">for 36 months</string>
     <string name="transfer_sheet_button_label">Select your bank Account</string>
+    <string name="transfer_sheet_label">Plan:</string>
 
     <!--    selection sheet strings-->
-    <string name="selection_sheet_title">Select bank account you want to transfer money</string>
-    <string name="selection_sheet_desc">This process is irreversible so select carefully</string>
+    <string name="selection_sheet_title">Select bank account</string>
+    <string name="selection_sheet_desc">Available banks are listed here</string>
     <string name="bank_1">HDFC Bank</string>
     <string name="bank_2">SBI Bank</string>
     <string name="bank_3">ICICI Bank</string>
     <string name="selection_sheet_button_label">Done</string>
+
+    <!--    congrats activity strings-->
+    <string name="congrats_text"><font color='#F13172'>Congratulations</font>\nYour loan is confirmed</string>
 </resources>

@@ -4,12 +4,12 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/primary_top_rounded"
-    android:paddingVertical="105dp">
+    android:paddingVertical="32dp">
 
     <ProgressBar
         android:id="@+id/progress_verification"
-        android:layout_width="220dp"
-        android:layout_height="220dp"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
         android:indeterminateOnly="false"
         android:progressDrawable="@drawable/determinate_progress_layer"
         app:layout_constraintBottom_toBottomOf="parent"

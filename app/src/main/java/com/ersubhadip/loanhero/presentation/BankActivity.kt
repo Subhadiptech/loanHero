@@ -2,7 +2,9 @@ package com.ersubhadip.loanhero.presentation
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
+import android.util.DisplayMetrics
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -67,8 +69,10 @@ class BankActivity : AppCompatActivity() {
 
                 bindingPanSheet.next.setOnClickListener {
                     if (checkPanNumber(bindingPanSheet.panInput.text.toString().trim())) {
-//                        bindingPanSheet.title.text =
-//                            "PAN NUMBER IS: ${bindingPanSheet.panInput.text.toString().uppercase()}"
+                        bindingPanSheet.panText.text =
+                            bindingPanSheet.panInput.text.toString().uppercase()
+                        bindingPanSheet.expandedPanContainer.visibility = View.INVISIBLE
+                        bindingPanSheet.collapsedPanContainer.visibility = View.VISIBLE
                         viewLoadingBottomSheet.show()
                         loadingProgressImpl()
 
@@ -85,6 +89,18 @@ class BankActivity : AppCompatActivity() {
             }
         }
 
+        bindingTransferSheet.bankSelectionNext.setOnClickListener {
+            bindingTransferSheet.expandedTransferContainer.visibility = View.INVISIBLE
+            bindingTransferSheet.collapsedTransferContainer.visibility = View.VISIBLE
+            viewSelectionBottomSheet.show()
+        }
+
+        bindingSelectionSheet.bankSelectionNext.setOnClickListener {
+            startActivity(Intent(this@BankActivity, CongratulationsActivity::class.java))
+            finish()
+        }
+
+        //cancels
         viewPanBottomSheet.setOnCancelListener {
             binding.amtContainer.visibility = View.GONE
             binding.mainContainer.visibility = View.VISIBLE
@@ -97,10 +113,12 @@ class BankActivity : AppCompatActivity() {
 
         }
         viewTransferBottomSheet.setOnCancelListener {
-
+            bindingPanSheet.collapsedPanContainer.visibility = View.GONE
+            bindingPanSheet.expandedPanContainer.visibility = View.VISIBLE
         }
         viewSelectionBottomSheet.setOnCancelListener {
-
+            bindingTransferSheet.collapsedTransferContainer.visibility = View.GONE
+            bindingTransferSheet.expandedTransferContainer.visibility = View.VISIBLE
         }
     }
 
@@ -171,8 +189,8 @@ class BankActivity : AppCompatActivity() {
             bindingLoadingSheet.progressVerification.setProgress(20, true)
             bindingLoadingSheet.loadingText.text = "20 %"
             delay(2000)
-            bindingLoadingSheet.progressVerification.setProgress(80, true)
-            bindingLoadingSheet.loadingText.text = "80 %"
+            bindingLoadingSheet.progressVerification.setProgress(75, true)
+            bindingLoadingSheet.loadingText.text = "75 %"
             delay(1500)
             bindingLoadingSheet.progressVerification.setProgress(100, true)
             bindingLoadingSheet.loadingText.text = "100 %"
@@ -180,6 +198,12 @@ class BankActivity : AppCompatActivity() {
             viewLoadingBottomSheet.dismiss()
             viewTransferBottomSheet.show()
         }
+    }
+
+    private fun getScreenHeight(): Int {
+        val displayMetrics = DisplayMetrics()
+        val height = displayMetrics.heightPixels
+        return height
     }
 
 }
