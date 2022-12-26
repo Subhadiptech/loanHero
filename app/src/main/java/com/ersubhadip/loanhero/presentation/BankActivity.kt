@@ -7,7 +7,9 @@ import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.ersubhadip.loanhero.R
 import com.ersubhadip.loanhero.databinding.*
+import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
@@ -65,6 +67,8 @@ class BankActivity : AppCompatActivity() {
 
                 bindingPanSheet.next.setOnClickListener {
                     if (checkPanNumber(bindingPanSheet.panInput.text.toString().trim())) {
+//                        bindingPanSheet.title.text =
+//                            "PAN NUMBER IS: ${bindingPanSheet.panInput.text.toString().uppercase()}"
                         viewLoadingBottomSheet.show()
                         loadingProgressImpl()
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,120 +7,127 @@
     android:background="@color/black"
     tools:context=".presentation.BankActivity">
 
-    <TextView
-        android:id="@+id/hello_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:text="@string/hello"
-        android:textColor="@color/white"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/name_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/name_dummy"
-        android:textColor="@color/primary"
-        android:textSize="22sp"
-        app:layout_constraintStart_toStartOf="@id/hello_label"
-        app:layout_constraintTop_toBottomOf="@id/hello_label" />
-
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/selection_surface"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/surface_bg"
-        android:orientation="vertical"
-        android:paddingHorizontal="22dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/name_text">
+        android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/guide_text"
+            android:id="@+id/hello_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:text="@string/guide_text"
-            android:textColor="@color/gray_light"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/hello"
+            android:textColor="@color/white"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <me.tankery.lib.circularseekbar.CircularSeekBar
-            android:id="@+id/progress_amount"
-            android:layout_width="280dp"
-            android:layout_height="280dp"
-            android:layout_marginTop="48dp"
-            app:cs_circle_color="@color/gray"
-            app:cs_circle_progress_color="@color/primary"
-            app:cs_circle_stroke_width="12dp"
-            app:cs_circle_style="round"
-            app:cs_circle_x_radius="0dp"
-            app:cs_circle_y_radius="0dp"
-            app:cs_disable_pointer="false"
-            app:cs_disable_progress_glow="false"
-            app:cs_end_angle="270"
-            app:cs_hide_progress_when_empty="false"
-            app:cs_maintain_equal_circle="true"
-            app:cs_max="500000"
-            app:cs_move_outside_circle="true"
-            app:cs_negative_enabled="false"
-            app:cs_pointer_alpha_ontouch="5"
-            app:cs_pointer_color="@color/white"
-            app:cs_pointer_stroke_width="6dp"
-            app:cs_progress="100000"
-            app:cs_start_angle="270"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.496"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/guide_text" />
-
         <TextView
-            android:id="@+id/amount_text"
+            android:id="@+id/name_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="₹ 0"
-            android:textColor="@color/white"
+            android:text="@string/name_dummy"
+            android:textColor="@color/primary"
             android:textSize="22sp"
-            app:layout_constraintBottom_toBottomOf="@id/progress_amount"
-            app:layout_constraintEnd_toEndOf="@id/progress_amount"
-            app:layout_constraintStart_toStartOf="@id/progress_amount"
-            app:layout_constraintTop_toTopOf="@id/progress_amount" />
+            app:layout_constraintStart_toStartOf="@id/hello_label"
+            app:layout_constraintTop_toBottomOf="@id/hello_label" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/selection_surface"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/surface_bg"
+            android:orientation="vertical"
+            android:paddingHorizontal="22dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/name_text">
+
+            <TextView
+                android:id="@+id/guide_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="@string/guide_text"
+                android:textColor="@color/gray_light"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <me.tankery.lib.circularseekbar.CircularSeekBar
+                android:id="@+id/progress_amount"
+                android:layout_width="280dp"
+                android:layout_height="280dp"
+                android:layout_marginTop="48dp"
+                app:cs_circle_color="@color/gray"
+                app:cs_circle_progress_color="@color/primary"
+                app:cs_circle_stroke_width="12dp"
+                app:cs_circle_style="round"
+                app:cs_circle_x_radius="0dp"
+                app:cs_circle_y_radius="0dp"
+                app:cs_disable_pointer="false"
+                app:cs_disable_progress_glow="false"
+                app:cs_end_angle="270"
+                app:cs_hide_progress_when_empty="false"
+                app:cs_maintain_equal_circle="true"
+                app:cs_max="500000"
+                app:cs_move_outside_circle="true"
+                app:cs_negative_enabled="false"
+                app:cs_pointer_alpha_ontouch="5"
+                app:cs_pointer_color="@color/white"
+                app:cs_pointer_stroke_width="6dp"
+                app:cs_progress="100000"
+                app:cs_start_angle="270"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.496"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/guide_text" />
+
+            <TextView
+                android:id="@+id/amount_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="₹ 0"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                app:layout_constraintBottom_toBottomOf="@id/progress_amount"
+                app:layout_constraintEnd_toEndOf="@id/progress_amount"
+                app:layout_constraintStart_toStartOf="@id/progress_amount"
+                app:layout_constraintTop_toTopOf="@id/progress_amount" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:id="@+id/start_verification"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/blue_rounded"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?selectableItemBackground"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingVertical="12dp"
+            app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/ic_click"
+                app:tint="@color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="@string/start_process_text"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <LinearLayout
-        android:id="@+id/start_verification"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/blue_rounded"
-        android:clickable="true"
-        android:focusable="true"
-        android:foreground="?selectableItemBackground"
-        android:gravity="center"
-        android:orientation="horizontal"
-        android:paddingVertical="12dp"
-        app:layout_constraintBottom_toBottomOf="parent">
-
-        <ImageView
-            android:layout_width="28dp"
-            android:layout_height="28dp"
-            android:src="@drawable/ic_click"
-            app:tint="@color/white" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:text="@string/start_process_text"
-            android:textColor="@color/white"
-            android:textSize="18sp" />
-
-    </LinearLayout>
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
