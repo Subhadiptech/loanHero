@@ -15,6 +15,7 @@
 
 #### Resources used:
 
+- Android DOCS
 - Material UI
 - Canva for logo
-- Android DOCS
+
