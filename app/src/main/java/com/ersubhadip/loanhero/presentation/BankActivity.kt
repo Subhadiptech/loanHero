@@ -2,11 +2,17 @@ package com.ersubhadip.loanhero.presentation
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.ersubhadip.loanhero.databinding.*
 import com.google.android.material.bottomsheet.BottomSheetDialog
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import me.tankery.lib.circularseekbar.CircularSeekBar
 import java.util.regex.Matcher
 import java.util.regex.Pattern
@@ -60,15 +66,13 @@ class BankActivity : AppCompatActivity() {
                 bindingPanSheet.next.setOnClickListener {
                     if (checkPanNumber(bindingPanSheet.panInput.text.toString().trim())) {
                         viewLoadingBottomSheet.show()
+                        loadingProgressImpl()
 
                     } else {
                         showToast("Invalid Pan Number")
                     }
                 }
 
-                //todo:bottom sheet sequence
-                //1 - enter pan
-                //2 - loading sheet
                 //3 - transfer to bank sheet - click and done
 
             } else {
@@ -98,7 +102,7 @@ class BankActivity : AppCompatActivity() {
         bindingLoadingSheet = LoadingSheetBinding.inflate(layoutInflater)
         viewLoadingBottomSheet = BottomSheetDialog(context)
         viewLoadingBottomSheet.apply {
-            setCancelable(false)
+            setCancelable(true)
             setContentView(bindingLoadingSheet.root)
         }
 
@@ -140,6 +144,27 @@ class BankActivity : AppCompatActivity() {
     private fun showToast(msg: String) {
         Toast.makeText(this@BankActivity, msg, Toast.LENGTH_SHORT)
             .show()
+    }
+
+    private fun loadingProgressImpl() {
+        bindingLoadingSheet.progressVerification.max = 100
+        bindingLoadingSheet.loadingText.text = "0 %"
+        GlobalScope.launch(Dispatchers.Main) {
+            bindingLoadingSheet.progressVerification.setProgress(5, true)
+            bindingLoadingSheet.loadingText.text = "5 %"
+            delay(500)
+            bindingLoadingSheet.progressVerification.setProgress(20, true)
+            bindingLoadingSheet.loadingText.text = "20 %"
+            delay(2000)
+            bindingLoadingSheet.progressVerification.setProgress(80, true)
+            bindingLoadingSheet.loadingText.text = "80 %"
+            delay(1500)
+            bindingLoadingSheet.progressVerification.setProgress(100, true)
+            bindingLoadingSheet.loadingText.text = "100 %"
+            delay(200)
+            viewLoadingBottomSheet.dismiss()
+            viewTransferBottomSheet.show()
+        }
     }
 
 }
