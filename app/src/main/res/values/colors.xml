@@ -9,9 +9,17 @@
 
 
     <!--    main color scheme-->
-    <color name="primary_gold">#F13172</color>
+    <color name="primary">#F13172</color>
+    <color name="primary_light">#F46092</color>
     <color name="accent_color">#000000</color>
     <color name="main_bg">#1B1B1B</color>
     <color name="white">#FFFFFFFF</color>
     <color name="gray">#10F1F1F1</color>
+    <color name="gray_light">#92FFFFFF</color>
+    <color name="span">#4F62CC</color>
+
+    <!--    plans card colors-->
+    <color name="card_1">#8A6804</color>
+    <color name="card_2">#EB77FF</color>
+    <color name="card_3">#5366CF</color>
 </resources>

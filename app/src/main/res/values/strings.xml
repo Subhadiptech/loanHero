@@ -1,3 +1,33 @@
 <resources>
     <string name="app_name">loanHero</string>
+
+    <!--    bank activity strings-->
+    <string name="hello">Hello,</string>
+    <string name="name_dummy"><font>Subhadip</font></string>
+    <string name="guide_text">Select the amount by moving the dial and get the amount <font color='#4F62CC'>(upto 500,000)</font> credited instantly on your bank account</string>
+    <string name="start_process_text">Click here to start verification</string>
+
+    <!--    pan sheet string-->
+    <string name="pan_sheet_title">You are one click far from getting your loan</string>
+    <string name="pan_sheet_input_label">Enter Your PAN</string>
+    <string name="pan_sheet_verify">Verify KYC and check status now</string>
+
+    <!--    transfer sheet strings-->
+    <string name="transfer_sheet_title">Select how you with to repay</string>
+    <string name="transfer_sheet_desc">Choose one of the recommended plans</string>
+    <string name="plan_1">₹ 8000/month</string>
+    <string name="month_1">for 12 months</string>
+    <string name="plan_2">₹ 6000/month</string>
+    <string name="month_2">for 24 months</string>
+    <string name="plan_3">₹ 3500/month</string>
+    <string name="month_3">for 36 months</string>
+    <string name="transfer_sheet_button_label">Select your bank Account</string>
+
+    <!--    selection sheet strings-->
+    <string name="selection_sheet_title">Select bank account you want to transfer money</string>
+    <string name="selection_sheet_desc">This process is irreversible so select carefully</string>
+    <string name="bank_1">HDFC Bank</string>
+    <string name="bank_2">SBI Bank</string>
+    <string name="bank_3">ICICI Bank</string>
+    <string name="selection_sheet_button_label">Done</string>
 </resources>
