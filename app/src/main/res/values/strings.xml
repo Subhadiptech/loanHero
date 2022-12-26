@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">loanHero</string>
+    <string name="app_name">LoanHero</string>
 
     <!--    bank activity strings-->
     <string name="hello">Hello,</string>
