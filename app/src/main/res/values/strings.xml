@@ -6,6 +6,7 @@
     <string name="name_dummy"><font>Subhadip</font></string>
     <string name="guide_text">Select the amount by moving the dial and get the amount <font color='#4F62CC'>(upto 500,000)</font> credited instantly on your bank account</string>
     <string name="start_process_text">Click here to start verification</string>
+    <string name="amt_label">Amount Selected: </string>
 
     <!--    pan sheet string-->
     <string name="pan_sheet_title">You are one click far from getting your loan</string>

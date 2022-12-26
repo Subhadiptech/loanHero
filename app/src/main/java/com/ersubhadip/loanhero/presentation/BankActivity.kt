@@ -2,14 +2,11 @@ package com.ersubhadip.loanhero.presentation
 
 import android.annotation.SuppressLint
 import android.content.Context
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.ersubhadip.loanhero.R
 import com.ersubhadip.loanhero.databinding.*
-import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
@@ -63,6 +60,9 @@ class BankActivity : AppCompatActivity() {
 
         binding.startVerification.setOnClickListener {
             if (binding.progressAmount.progress.roundToInt() != 0) {
+                binding.mainContainer.visibility = View.GONE
+                binding.amtText.text = binding.amountText.text.toString()
+                binding.amtContainer.visibility = View.VISIBLE
                 viewPanBottomSheet.show()
 
                 bindingPanSheet.next.setOnClickListener {
@@ -86,10 +86,21 @@ class BankActivity : AppCompatActivity() {
         }
 
         viewPanBottomSheet.setOnCancelListener {
+            binding.amtContainer.visibility = View.GONE
+            binding.mainContainer.visibility = View.VISIBLE
             if (!isDone) {
                 showToast("Process Cancelled")
 
             }
+        }
+        viewLoadingBottomSheet.setOnCancelListener {
+
+        }
+        viewTransferBottomSheet.setOnCancelListener {
+
+        }
+        viewSelectionBottomSheet.setOnCancelListener {
+
         }
     }
 
