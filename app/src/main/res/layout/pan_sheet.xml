@@ -4,7 +4,7 @@
     android:id="@+id/pan_sheet_container"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/primary_top_rounded">
+    >
 
     <LinearLayout
         android:id="@+id/collapsed_pan_container"
