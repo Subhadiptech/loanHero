@@ -3,8 +3,13 @@ package com.ersubhadip.loanhero.presentationHelper
 import android.content.Context
 import android.util.AttributeSet
 import android.widget.LinearLayout
+import javax.inject.Inject
 
-class StackWidgetItem(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0) : LinearLayout(context, attrs, defStyleAttr) {
+class StackWidgetItem @Inject constructor(
+    context: Context,
+    attrs: AttributeSet? = null,
+    defStyleAttr: Int = 0
+) : LinearLayout(context, attrs, defStyleAttr) {
 
     var stackWidgetItemListener: StackWidgetItemListener? = null
 
