@@ -6,11 +6,10 @@
 
 #### Preview
 
+<img src="https://user-images.githubusercontent.com/89024718/209642703-20397e58-e247-43ba-9c57-e68992b7dea9.mp4"/>
 
 
-
-
-#### APK LINK
+#### <a href="https://drive.google.com/file/d/1-zqAAvmVX6TAh7GT1ZnvppNOtBsljCfm/view?usp=sharing" target="_blank">APK LINK</a>
 
 
 #### Resources used:
